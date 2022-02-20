@@ -1,0 +1,17 @@
+name: ZxChat
+version: '${project.version}'
+main: cn.zry551.zxchat.ZxChat
+api-version: 1.15
+authors: [ ZRY551 ]
+description: Make Plugins by Python.
+website: https://mcmod.zry551.cn
+commands:
+  zxchat:
+    aliases:
+      - "zxchat"
+      - "zxc"
+    usage: "/zxchat"
+    description: "Open Settings GUI or Debug Mode."
+    permission: "minecraft.command.op"
+    permission-message: "Only Admin can do that!"
+
