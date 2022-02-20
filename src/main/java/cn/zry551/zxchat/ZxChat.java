@@ -1,8 +1,9 @@
 package cn.zry551.zxchat;
 
 import cn.zry551.zxchat.Commands.ZxChatCmd;
+import cn.zry551.zxchat.Commands.ZxChatCmdAdmin;
+import cn.zry551.zxchat.Commands.ZxChatSmall;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -74,6 +75,8 @@ public final class ZxChat extends JavaPlugin {
         CN.Init(DataDir.getPath() + "/CallNameData.yml",this.getConfig());
         Bukkit.getPluginManager().registerEvents(new ChatEvent(), this);
         Objects.requireNonNull(Bukkit.getPluginCommand("zxchat")).setExecutor(new ZxChatCmd());
+        Objects.requireNonNull(Bukkit.getPluginCommand("zxchatadmin")).setExecutor(new ZxChatCmdAdmin());
+        Objects.requireNonNull(Bukkit.getPluginCommand("zxchatsmall")).setExecutor(new ZxChatSmall());
         // 注册事件处理器，也要实例化，requireNonNull 是不必要的，但是万一插件损坏了或者 Bukkit 出错了，我们还能知道是这里出问题
 
     }

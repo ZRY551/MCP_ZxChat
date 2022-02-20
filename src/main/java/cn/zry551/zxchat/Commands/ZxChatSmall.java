@@ -2,7 +2,6 @@ package cn.zry551.zxchat.Commands;
 
 import cn.zry551.zxchat.CallName;
 import cn.zry551.zxchat.ClassSave;
-import cn.zry551.zxchat.Str;
 import cn.zry551.zxchat.ZxChat;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,8 +11,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-public class ZxChatCmd implements CommandExecutor {
+public class ZxChatSmall implements CommandExecutor {
     public static CallName CN = ZxChat.CN;
     public static String RegEx="[`${}<>/|{}]";
     public static Pattern P = Pattern.compile(RegEx);
@@ -31,22 +29,22 @@ public class ZxChatCmd implements CommandExecutor {
 
         //sender.sendMessage("Gui!");
         try{
-            if(args[0].equals("add")){
+            /*if(args[0].equals("add")){
                 Matcher M = P.matcher(args[1]);
                 String NSD = M.replaceAll("").trim();
                 CN.Add(sender.getName(),NSD);
                 sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Add Name '" + NSD + "' for player '" + sender.getName() + "' ! ");
                 CN.Save();
                 return true;
-            }
-            if(args[0].equals("remove")){
+            }*/
+            /*if(args[0].equals("remove")){
                 Matcher M = P.matcher(args[1]);
                 String NSD = M.replaceAll("").trim();
                 CN.Add(sender.getName(),NSD);
                 sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Remove Name '" + NSD + "' for player '" + sender.getName() + "' ! ");
                 CN.Save();
                 return true;
-            }
+            }*/
             if(args[0].equals("list")){
                 List<String> LS = CN.GetList(sender.getName());
                 String NR = "";
@@ -94,6 +92,4 @@ public class ZxChatCmd implements CommandExecutor {
 
         return false;
     }
-
-
 }

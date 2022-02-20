@@ -34,17 +34,17 @@ public class ChatEvent implements Listener {
         if(!Data.UseCallName){
             e.setFormat(Data.Format);//.replaceAll("#","%")
         }else{
-            try {
+            /*try {*/
                 String NP = CN.GetNow(e.getPlayer().getName());
                 if(NP == "" | NP == null | NP == "#NULL"){
                     e.setFormat(Data.Format);//.replaceAll("#","%")
                 }else{
                     e.setFormat(Data.CallNameFormat.replaceAll("#CN",NP));//.replaceAll("#","%")
                 }
-            } catch (CallName.CallNameNotFound ex) {
+            /*} catch (CallName.CallNameNotFound ex) {
                 //ex.printStackTrace();
                 e.setFormat(Data.Format);//.replaceAll("#","%")
-            }
+            }*/
             //e.setFormat(Data.CallNameFormat);//.replaceAll("#","%")
         }
         String MSG = e.getMessage();

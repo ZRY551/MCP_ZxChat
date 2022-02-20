@@ -10,8 +10,25 @@ commands:
     aliases:
       - "zxchat"
       - "zxc"
-    usage: "/zxchat"
-    description: "Open Settings GUI or Debug Mode."
+    usage: "\u00a7l\u00a73Use : /zxchat <Args>"
+    description: "\u00a7l\u00a73/Open Settings GUI."
     permission: "minecraft.command.op"
-    permission-message: "Only Admin can do that!"
-
+    permission-message: "\u00a7l\u00a73/You can't do that!"
+  zxchatadmin:
+    aliases:
+      - "zxchatadmin"
+      - "zxca"
+      - "zxcadmin"
+    usage: "\u00a7l\u00a73Use : /zxchatadmin <Args>"
+    description: "\u00a7l\u00a73/Open Settings GUI or Debug Mode."
+    permission: "minecraft.command.op"
+    permission-message: "\u00a7l\u00a73/Only Admin can do that!"
+  zxchatsmall:
+    aliases:
+      - "zxchatsmall"
+      - "zxcs"
+      - "zxcsmall"
+    usage: "\u00a7l\u00a73Use : /zxchatsmall <Args>"
+    description: "\u00a7l\u00a73/Open Settings GUI."
+    #permission: "minecraft.command.op"
+    permission-message: "\u00a7l\u00a73/You can't do that!"
