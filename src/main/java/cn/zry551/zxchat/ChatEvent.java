@@ -53,9 +53,13 @@ public class ChatEvent implements Listener {
         String MSGR = MSG;
         try{
             if(Data.UseColor) {
+                MSG = MSG.replaceAll("%%", "#BF");
                 MSG = MSG.replaceAll("%", "\u00a7");
+                MSG = MSG.replaceAll("#BF", "%");
             }else{
+                MSG = MSG.replaceAll("%%", "#BF");
                 MSG = MSG.replaceAll("%", "%");
+                MSG = MSG.replaceAll("#BF", "%");
             }
         }catch (Exception ex){
             ex.printStackTrace();
