@@ -1,6 +1,6 @@
 package cn.zry551.zxchat;
 
-import jdk.vm.ci.code.site.Call;
+
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.jetbrains.annotations.NotNull;
@@ -80,8 +80,12 @@ public class CallName {
 
     public String GetNow(String PlayerName){
         String ARG = Cfg.getString(PlayerName + ".now");
-        if(ARG == null | ARG == "#NULL" | ARG == ""){
-            return "#NULL";
+        if(ARG == null | Objects.equals(ARG, "#NULL") | Objects.equals(ARG, "")){
+            if(Data.UseDefaultCallName){
+                return Data.DefaultCallName.replaceAll("%",Str.CF);
+            }else{
+                return "#NULL";
+            }
         }
         return ARG.replaceAll("%",Str.CF);
     }

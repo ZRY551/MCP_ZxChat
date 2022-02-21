@@ -24,7 +24,7 @@ public class ZxChatCmdAdmin implements CommandExecutor {
             for (int i = 0; i < args.length; i++) {
                 dif = dif + args[i] + ",";
             }
-            sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Debug Info : \n=Sender Name : " + args[2] + "\n=Command Name : "
+            sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Debug Info : \n=Sender Name : " + args[2] + "\n=Command Name : "
                     + command.getName() + "\n=Label Info : " + label.toString() + "\n=Args Info : " + dif);
         }
 
@@ -34,7 +34,7 @@ public class ZxChatCmdAdmin implements CommandExecutor {
                 Matcher M = P.matcher(args[1]);
                 String NSD = M.replaceAll("").trim();
                 CN.Add(args[2],NSD);
-                sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Add Name '" + NSD + "' for player '" + args[2] + "' ! ");
+                sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Add Name '\u00a7r" + NSD + "\u00a7r\u00a7d' for player '" + args[2] + "' ! ");
                 CN.Save();
                 return true;
             }
@@ -42,7 +42,7 @@ public class ZxChatCmdAdmin implements CommandExecutor {
                 Matcher M = P.matcher(args[1]);
                 String NSD = M.replaceAll("").trim();
                 CN.Add(args[2],NSD);
-                sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Remove Name '" + NSD + "' for player '" + args[2] + "' ! ");
+                sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Remove Name '\u00a7r" + NSD + "\u00a7r' for player '" + args[2] + "' ! ");
                 CN.Save();
                 return true;
             }
@@ -50,14 +50,14 @@ public class ZxChatCmdAdmin implements CommandExecutor {
                 List<String> LS = CN.GetList(args[1]);
                 String NR = "";
                 for (String SR:LS) {
-                    NR = "\n\u00a7d - \u00a7r" + SR + NR;
+                    NR = "\n\u00a7d - \u00a7r" + SR + NR + "\u00a7r";
                 }
-                sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Name List : " + NR);
+                sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Name List for Player '" + args[1] + "': " + NR);
                 CN.Save();
                 return true;
             }
             if(args[0].equals("set")){
-                List<String> LS = CN.GetList(args[2]);
+                List<String> LS = CN.GetList(args[1]);
                 /*if(!LS.equals(args[1])){
                     sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Name Not Found ! ");
                 }*/
@@ -65,12 +65,12 @@ public class ZxChatCmdAdmin implements CommandExecutor {
                 //CN.Add(args[2],args[1]);
                 try {
                     CN.SetNow(args[2], LS.get(Integer.parseInt(args[1])));
-                    sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Set Name : " + args[2]);
+                    sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Set Name for Player '" + args[2] + "' : \u00a7r" + LS.get(Integer.parseInt(args[1])));
                     CN.Save();
                     return true;
                 }catch (Exception ex){
                     ex.printStackTrace();
-                    sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Error ! ");
+                    sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Error ! ");
                     CN.Save();
                     return false;
                 }
@@ -80,7 +80,7 @@ public class ZxChatCmdAdmin implements CommandExecutor {
 
                 List<String> LS = CN.GetList(args[1]);
                 CN.SetNow(args[1],"#NULL");
-                sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Remove Name ! ");
+                sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Remove Name for Player : '" + args[1] + "' ! ");
                 CN.Save();
                 return true;
             }
@@ -88,7 +88,7 @@ public class ZxChatCmdAdmin implements CommandExecutor {
 
         }catch (Exception ex){
             ex.printStackTrace();
-            sender.sendMessage("\u00a7l[\u00a76ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Error ! ");
+            sender.sendMessage("\u00a7l[\u00a73ZxChat\u00a7r\u00a7l]\u00a7r\u00a7d Error ! ");
         }
 
         return false;

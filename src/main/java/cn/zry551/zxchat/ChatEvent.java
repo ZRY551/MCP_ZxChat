@@ -5,6 +5,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerChatEvent;
 
+import java.util.Objects;
+
 
 public class ChatEvent implements Listener {
     /*@EventHandler
@@ -36,7 +38,7 @@ public class ChatEvent implements Listener {
         }else{
             /*try {*/
                 String NP = CN.GetNow(e.getPlayer().getName());
-                if(NP == "" | NP == null | NP == "#NULL"){
+                if(Objects.equals(NP, "") | NP == null | Objects.equals(NP, "#NULL")){
                     e.setFormat(Data.Format);//.replaceAll("#","%")
                 }else{
                     e.setFormat(Data.CallNameFormat.replaceAll("#CN",NP));//.replaceAll("#","%")
