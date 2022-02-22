@@ -34,7 +34,11 @@ public class ChatEvent implements Listener {
     public void ChatRebuild(AsyncPlayerChatEvent e){
         //e.setFormat("\u00a7l[\u00a76%1$s\u00a7r\u00a7l]\u00a7r \u00a7a%2$s");
         if(!Data.UseCallName){
-            e.setFormat(Data.Format);//.replaceAll("#","%")
+            String FN = Data.Format;
+            FN = FN.replaceAll("&&","#FG");
+            FN = FN.replaceAll("&",Str.CF);
+            FN = FN.replaceAll("#FG","&");
+            e.setFormat(FN);//.replaceAll("#","%")
         }else{
             /*try {*/
                 String NP = CN.GetNow(e.getPlayer().getName());
@@ -45,7 +49,7 @@ public class ChatEvent implements Listener {
                     FN = FN.replaceAll("#FG","&");
                     e.setFormat(FN);//.replaceAll("#","%")
                 }else{
-                    String FN = Data.Format;
+                    String FN = Data.CallNameFormat;
                     FN = FN.replaceAll("&&","#FG");
                     FN = FN.replaceAll("&",Str.CF);
                     FN = FN.replaceAll("#FG","&");
