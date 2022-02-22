@@ -39,9 +39,18 @@ public class ChatEvent implements Listener {
             /*try {*/
                 String NP = CN.GetNow(e.getPlayer().getName());
                 if(Objects.equals(NP, "") | NP == null | Objects.equals(NP, "#NULL")){
-                    e.setFormat(Data.Format);//.replaceAll("#","%")
+                    String FN = Data.Format;
+                    FN = FN.replaceAll("&&","#FG");
+                    FN = FN.replaceAll("&",Str.CF);
+                    FN = FN.replaceAll("#FG","&");
+                    e.setFormat(FN);//.replaceAll("#","%")
                 }else{
-                    e.setFormat(Data.CallNameFormat.replaceAll("#CN",NP));//.replaceAll("#","%")
+                    String FN = Data.Format;
+                    FN = FN.replaceAll("&&","#FG");
+                    FN = FN.replaceAll("&",Str.CF);
+                    FN = FN.replaceAll("#FG","&");
+                    FN = FN.replaceAll("#CN",NP);
+                    e.setFormat(FN);//.replaceAll("#","%")
                 }
             /*} catch (CallName.CallNameNotFound ex) {
                 //ex.printStackTrace();
