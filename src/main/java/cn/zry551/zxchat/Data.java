@@ -8,4 +8,7 @@ public class Data {
 
     public static boolean UseDefaultCallName = false;
     public static String DefaultCallName = "Player";
+    // Add some Test like this "//";
+    // Add some Test like this "//";
+    // Add some Test like this "//";
 }

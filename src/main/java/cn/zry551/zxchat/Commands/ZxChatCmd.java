@@ -20,6 +20,8 @@ public class ZxChatCmd implements CommandExecutor {
     @Override
     public boolean onCommand(@org.jetbrains.annotations.NotNull CommandSender sender, @org.jetbrains.annotations.NotNull Command command, @org.jetbrains.annotations.NotNull String label, @org.jetbrains.annotations.NotNull String[] args)
     {
+        // Add some Test like this "//";
+        // Add some Test like this "//";
         if(ClassSave.DebugMode){
             String dif = "";
             for (int i = 0; i < args.length; i++) {

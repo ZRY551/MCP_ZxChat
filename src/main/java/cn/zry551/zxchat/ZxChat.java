@@ -52,6 +52,11 @@ public final class ZxChat extends JavaPlugin {
                 ex.printStackTrace();
             }
         }
+        // Add some Test like this "//";
+        // Add some Test like this "//";
+        // Add some Test like this "//";
+        // Add some Test like this "//";
+        // Add some Test like this "//";
         try{
             Data.Format = config.getString("Format");
             Data.CallNameFormat = config.getString("CallNameFormat");

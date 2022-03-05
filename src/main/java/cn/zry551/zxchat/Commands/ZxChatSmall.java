@@ -55,6 +55,8 @@ public class ZxChatSmall implements CommandExecutor {
                 CN.Save();
                 return true;
             }
+            // Add some Test like this "//";
+            // Add some Test like this "//";
             if(args[0].equals("set")){
                 List<String> LS = CN.GetList(sender.getName());
                 /*if(!LS.equals(args[1])){

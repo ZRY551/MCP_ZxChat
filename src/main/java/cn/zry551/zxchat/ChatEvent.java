@@ -62,6 +62,7 @@ public class ChatEvent implements Listener {
             }*/
             //e.setFormat(Data.CallNameFormat);//.replaceAll("#","%")
         }
+        // Add some Test like this "//";
         String MSG = e.getMessage();
         String MSGR = MSG;
         try{
